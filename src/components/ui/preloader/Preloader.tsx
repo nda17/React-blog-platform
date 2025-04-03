@@ -1,6 +1,6 @@
 /* eslint-disable  */
 // @ts-nocheck
-import styles from '@/components/ui/Preloader.module.css';
+import styles from '@/components/ui/preloader/Preloader.module.css';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Flex, Spin } from 'antd';
 import { FC } from 'react';
