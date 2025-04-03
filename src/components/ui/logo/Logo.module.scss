@@ -1,0 +1,11 @@
+.link {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 156%;
+	color: rgba(0, 0, 0, 0.85);
+	transition: all 0.5s;
+
+	&:hover {
+		color: #808080;
+	}
+}
