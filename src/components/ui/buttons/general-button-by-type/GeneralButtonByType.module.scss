@@ -1,0 +1,58 @@
+.button {
+	border-top: 1px;
+	border-right: 1px;
+	border-bottom: 1px;
+	border-left: 1px;
+	border-style: solid;
+	border-radius: 4px;
+	padding: 8px 16px;
+	width: 118px;
+	height: 40px;
+	background-color: #ffffff;
+	transition: all 0.37s;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.button-delete-tag,
+.button-delete-article {
+	border-color: #f5222d;
+	color: #f5222d;
+
+	&:hover {
+		border-color: #cf3139;
+		color: #cf3139;
+	}
+}
+
+.button-add-tag {
+	border: 1px solid #1890ff;
+	color: #1890ff;
+
+	&:hover {
+		border-color: #006bce;
+		color: #006bce;
+	}
+}
+
+.button-edit-article {
+	border: 1px solid #52c41a;
+	color: #52c41a;
+
+	&:hover {
+		color: #419b15;
+		border-color: #419b15;
+	}
+}
+
+.disabled {
+	border-color: gray;
+	color: gray;
+
+	&:hover {
+		border-color: gray;
+		color: gray;
+	}
+}

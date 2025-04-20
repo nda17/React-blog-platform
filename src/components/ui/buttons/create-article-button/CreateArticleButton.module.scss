@@ -1,0 +1,17 @@
+.link-create-article {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 157%;
+	transition: all 0.5s;
+	text-align: center;
+	color: #52c41a;
+	padding: 3px 8px;
+	border: 1px solid #52c41a;
+	border-radius: 5px;
+
+	&:hover {
+		cursor: pointer;
+		color: #419b15;
+		border-color: #419b15;
+	}
+}
