@@ -12,6 +12,5 @@ export interface IArticleItem {
 	slug: string;
 	tagList: string[];
 	title: string;
-	updatedAt: string;
 	type: string;
 }
