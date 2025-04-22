@@ -1,0 +1,52 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.link-login,
+.link-register,
+.link-logout {
+	width: 95px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 156%;
+	transition: all 0.5s;
+	text-align: center;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.link-login {
+	color: #262626;
+
+	&:hover {
+		color: #808080;
+	}
+}
+
+.link-register {
+	color: #52c41a;
+	padding: 3px 8px;
+	border: 1px solid #52c41a;
+	border-radius: 5px;
+
+	&:hover {
+		color: #419b15;
+		border-color: #419b15;
+	}
+}
+
+.link-logout {
+	color: #262626;
+	padding: 3px 8px;
+	border: 1px solid #262626;
+	border-radius: 5px;
+
+	&:hover {
+		color: #808080;
+		border-color: #808080;
+	}
+}

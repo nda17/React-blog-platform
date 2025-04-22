@@ -57,28 +57,6 @@
 	align-items: center;
 	gap: 8px;
 }
-
-.create-button {
-	width: 100%;
-	min-width: 230px;
-	max-width: 319px;
-	height: 40px;
-	border-radius: 4px;
-	padding: 8px 16px;
-	color: #ffffff;
-	background-color: #1890ff;
-	transition: all 0.37s;
-
-	&:hover {
-		cursor: pointer;
-		background-color: #006bce;
-	}
-
-	@media (min-width: 425px) {
-		min-width: 236px;
-	}
-}
-
 .wrapper-change-form {
 	display: flex;
 	gap: 6px;

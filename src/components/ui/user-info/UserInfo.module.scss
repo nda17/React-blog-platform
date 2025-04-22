@@ -1,0 +1,27 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 13px;
+}
+
+.name-link {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 156%;
+	color: #262626;
+
+	@media (min-width: 768px) {
+		font-size: 18px;
+	}
+}
+
+.avatar {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+
+	@media (min-width: 768px) {
+		width: 46px;
+		height: 46px;
+	}
+}

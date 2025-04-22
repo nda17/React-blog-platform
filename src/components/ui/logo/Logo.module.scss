@@ -8,4 +8,8 @@
 	&:hover {
 		color: #808080;
 	}
+
+	@media (min-width: 768px) {
+		min-width: 9rem;
+	}
 }
