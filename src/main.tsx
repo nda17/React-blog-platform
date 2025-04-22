@@ -1,4 +1,4 @@
-import App from '@/App.tsx';
+import { App } from '@/App.tsx';
 import '@/index.scss';
 import { persistor, store } from '@/store/store';
 import ReactDOM from 'react-dom/client';
