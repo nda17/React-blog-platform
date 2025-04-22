@@ -15,7 +15,7 @@ import { Outlet } from 'react-router-dom';
 export const Layout: FC = () => {
 	useTokenCheck();
 	const message = 'No network connection!';
-	const description = 'Please, try again later or check your connection.'; // const [shouldPoll, setShouldPoll] = useState(false); // Флаг для управления опросом
+	const description = 'Please, try again later or check your connection.';
 	const type = 'error';
 	const [totalPages, setTotalPages] = useState<number>(0);
 	const [currentPage, setCurrentPage] = useState<number>(1);
