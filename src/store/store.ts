@@ -1,5 +1,5 @@
-// eslint-disable-next-line
-//@ts-nocheck
+/* eslint-disable  */
+// @ts-nocheck
 import { api } from '@/store/api';
 import { rootReducer } from '@/store/rootReducer';
 import { configureStore } from '@reduxjs/toolkit';
