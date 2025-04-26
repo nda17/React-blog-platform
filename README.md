@@ -21,7 +21,7 @@
 
 ## Deployed:
 
-[Watch here](https://)
+[Watch here](https://react-blog-platform-bice.vercel.app/)
 
 ## Project setup:
 
