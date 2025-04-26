@@ -70,7 +70,7 @@ export const ArticleItem: FC<IArticleItem> = ({
 					token: token,
 					slug: slug
 				}).unwrap();
-				toast.success('Like successfully added');
+				toast.success('Like successfully deleted');
 			} catch (error) {
 				console.error(error);
 				toast.error(`Error: ${error?.status} Like not deleted!`);
@@ -81,7 +81,7 @@ export const ArticleItem: FC<IArticleItem> = ({
 					token: token,
 					slug: slug
 				}).unwrap();
-				toast.success('Like successfully deleted');
+				toast.success('Like successfully added');
 			} catch (error) {
 				console.error(error);
 				toast.error(`Error: ${error?.status} Like not added!`);
