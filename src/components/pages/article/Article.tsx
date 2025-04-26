@@ -6,7 +6,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-export const Article: FC = () => {
+ const Article: FC = () => {
 	const message = 'Article not found.';
 	const description = 'Please, search again.';
 	const type = 'article';
@@ -42,3 +42,5 @@ export const Article: FC = () => {
 		</div>
 	);
 };
+
+export default Article;

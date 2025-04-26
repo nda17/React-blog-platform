@@ -12,7 +12,7 @@ import { Offline, Online } from 'react-detect-offline';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
-export const Layout: FC = () => {
+const Layout: FC = () => {
 	useTokenCheck();
 	const message = 'No network connection!';
 	const description = 'Please, try again later or check your connection.';
@@ -71,3 +71,5 @@ export const Layout: FC = () => {
 		</>
 	);
 };
+
+export default Layout;

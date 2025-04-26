@@ -7,7 +7,7 @@ import { FC } from 'react';
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export const SignIn: FC = () => {
+const SignIn: FC = () => {
 	const type = 'sign-in';
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -38,3 +38,5 @@ export const SignIn: FC = () => {
 
 	return <AuthForm type={type} handleRequest={handleRequest} />;
 };
+
+export default SignIn;

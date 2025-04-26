@@ -8,7 +8,7 @@ import { FC } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-export const ArticleCreate: FC = () => {
+const ArticleCreate: FC = () => {
 	const type = 'create';
 	const navigate = useNavigate();
 	const [createArticle] = useCreateArticleMutation();
@@ -52,3 +52,5 @@ export const ArticleCreate: FC = () => {
 		</div>
 	);
 };
+
+export default ArticleCreate;

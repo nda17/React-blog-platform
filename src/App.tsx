@@ -1,18 +1,28 @@
-import { Layout } from '@/components/layout/Layout';
-import { ArticleCreate } from '@/components/pages/article-create/ArticleCreate';
-import { ArticleEdit } from '@/components/pages/article-edit/ArticleEdit';
-import { Article } from '@/components/pages/article/Article';
-import { ArticlesList } from '@/components/pages/articles-list/ArticlesList';
-import { NotFound } from '@/components/pages/not-found/NotFound';
-import { SignIn } from '@/components/pages/sign-in/SignIn';
-import { SignUp } from '@/components/pages/sign-up/SignUp';
-import { UserEdit } from '@/components/pages/user-edit/UserEdit';
 import { PUBLIC_PAGES } from '@/config/pages/public.config';
 import { AuthProvider } from '@/hoc/auth-provider/AuthProvider';
 import { RequireAuth } from '@/hoc/require-auth/RequireAuth';
-import { FC } from 'react';
+import { FC, lazy } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Navigate, Route, Routes } from 'react-router-dom';
+const NotFound = lazy(
+	() => import('@/components/pages/not-found/NotFound')
+);
+const SignIn = lazy(() => import('@/components/pages/sign-in/SignIn'));
+const SignUp = lazy(() => import('@/components/pages/sign-up/SignUp'));
+const Layout = lazy(() => import('@/components/layout/Layout'));
+const ArticleCreate = lazy(
+	() => import('@/components/pages/article-create/ArticleCreate')
+);
+const ArticleEdit = lazy(
+	() => import('@/components/pages/article-edit/ArticleEdit')
+);
+const Article = lazy(() => import('@/components/pages/article/Article'));
+const ArticlesList = lazy(
+	() => import('@/components/pages/articles-list/ArticlesList')
+);
+const UserEdit = lazy(
+	() => import('@/components/pages/user-edit/UserEdit')
+);
 
 export const App: FC = () => {
 	return (

@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
-export const ArticlesList: FC = () => {
+ const ArticlesList: FC = () => {
 	const type = 'list';
 	const listArticles = useSelector(
 		(state: { listArticles: { articles: IArticleItem[] } }) =>
@@ -33,3 +33,5 @@ export const ArticlesList: FC = () => {
 		</div>
 	);
 };
+
+export default ArticlesList;

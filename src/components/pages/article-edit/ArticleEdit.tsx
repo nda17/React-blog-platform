@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
-export const ArticleEdit: FC = () => {
+const ArticleEdit: FC = () => {
 	const type = 'edit';
 	const navigate = useNavigate();
 	const [updateArticle] = useUpdateArticleMutation();
@@ -69,3 +69,5 @@ export const ArticleEdit: FC = () => {
 		/>
 	);
 };
+
+export default ArticleEdit;

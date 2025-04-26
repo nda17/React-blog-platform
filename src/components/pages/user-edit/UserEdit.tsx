@@ -7,7 +7,7 @@ import { FC } from 'react';
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export const UserEdit: FC = () => {
+const UserEdit: FC = () => {
 	const type = 'user-edit';
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -53,3 +53,5 @@ export const UserEdit: FC = () => {
 		<AuthForm user={user} type={type} handleRequest={handleRequest} />
 	);
 };
+
+export default UserEdit;
