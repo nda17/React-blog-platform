@@ -1,20 +1,27 @@
 import styles from '@/components/ui/auth-form/fields/field-password/FieldPassword.module.scss';
 import { IField } from '@/components/ui/auth-form/fields/field.interface';
+import { EyeFilled, EyeInvisibleFilled } from '@ant-design/icons';
 import clsx from 'clsx';
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 
 export const FieldPassword = forwardRef<HTMLInputElement, IField>(
 	(
-		{
-			errors,
-			required,
-			title,
-			validPassword,
-			type = 'password',
-			...rest
-		},
+		{ errors, required, title, validPassword, type = 'password', ...rest },
 		ref
 	) => {
+		const [showPassword, setShowPassword] = useState(false);
+		const [typeFiled, setTypeField] = useState(type);
+
+		const showPasswordField = () => {
+			setShowPassword(prev => !prev);
+
+			if (!showPassword) {
+				setTypeField('text');
+			} else {
+				setTypeField('password');
+			}
+		};
+
 		return (
 			<div className={clsx(styles['wrapper-input'])}>
 				<label className={clsx(styles['label-input'])}>
@@ -27,10 +34,21 @@ export const FieldPassword = forwardRef<HTMLInputElement, IField>(
 						)}
 						ref={ref}
 						required={required}
-						type={type}
+						type={typeFiled}
 						{...rest}
 						autoComplete="on"
 					/>
+					{showPassword ? (
+						<EyeFilled
+							className={clsx(styles['show-button-password'])}
+							onClick={() => showPasswordField()}
+						/>
+					) : (
+						<EyeInvisibleFilled
+							className={clsx(styles['show-button-password'])}
+							onClick={() => showPasswordField()}
+						/>
+					)}
 				</label>
 				{errors?.password && (
 					<p className={styles.error}>{errors?.password?.message}</p>
