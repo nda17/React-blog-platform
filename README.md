@@ -1,18 +1,22 @@
+# Blog-platform
+
 ## Used:
 
-- Vite
-- TypeScript
-- React v19.0.0 + React-router-dom
-- Redux-Toolkit
-- Redux-Persist
-- React-hook-form
-- React-hot-toast
-- JSX
 - HTML
 - SCSS
-- clsx
-- Date-fns
+- Vite
+- TypeScript
+- React
 - React-detect-offline
+- React-hot-toast
+- JSX
+- Redux-Toolkit
+- Redux-Persist
+- RTK-Query
+- Antd
+- Date-fns
+- CLSX
+- Markdown-to-Jsx"
 - UUID
 
 ## Deployed:
