@@ -9,7 +9,7 @@ export interface IArticleData {
 	articleTitle: string;
 	articleDescription: string;
 	articleTextarea: string;
-	articleFirstTag: string;
-	articleSecondTag: string;
-	articleThirdTag: string;
+	articleFirstTag?: string;
+	articleSecondTag?: string;
+	articleThirdTag?: string;
 }
