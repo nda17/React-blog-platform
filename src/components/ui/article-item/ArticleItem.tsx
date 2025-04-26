@@ -135,7 +135,7 @@ export const ArticleItem: FC<IArticleItem> = ({
 						return (
 							<TagArticle
 								key={uuidv4()}
-								tag={item.trim().slice(0, 8) || 'no data'}
+								tag={item && item.toString().trim().slice(0, 8)}
 							/>
 						);
 					})}
