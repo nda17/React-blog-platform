@@ -19,7 +19,7 @@ export const ArticleCreate: FC = () => {
 		try {
 			await createArticle({
 				token,
-				formattedArticle
+				article: formattedArticle
 			}).unwrap();
 			navigate(PUBLIC_PAGES.LIST_ARTICLES, { replace: true });
 			toast.success('Article successfully created');
