@@ -13,3 +13,5 @@ export interface IUserSignUp extends IUserSignIn {
 	username: string;
 	image?: string;
 }
+
+export type IUser = IUserSignIn | IUserSignUp | IUserEdit;
