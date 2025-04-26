@@ -6,6 +6,7 @@ import { FieldArticleSecondTag } from '@/components/ui/article-create-edit-form/
 import { FieldArticleTextarea } from '@/components/ui/article-create-edit-form/fields/field-article-textarea/FieldArticleTextarea';
 import { FieldArticleThirdTag } from '@/components/ui/article-create-edit-form/fields/field-article-third-tag/FieldArticleThirdTag';
 import { FieldArticleTitle } from '@/components/ui/article-create-edit-form/fields/field-article-title/FieldArticleTitle';
+import { IFieldErrors } from '@/components/ui/article-create-edit-form/fields/field-article.interface';
 import { IArticleItem } from '@/components/ui/article-item/article-item.interface';
 import { GeneralButtonByType } from '@/components/ui/buttons/general-button-by-type/GeneralButtonByType';
 import { SubmitFormButton } from '@/components/ui/buttons/submit-form-button/SubmitFormButton';
@@ -133,7 +134,7 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 				defaultValue={type === edit ? currentArticle.title : null}
 				type="text"
 				title="Title"
-				errors={errors}
+				errors={errors as IFieldErrors}
 			/>
 			<FieldArticleDescription
 				{...register('articleDescription', {
@@ -144,7 +145,7 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 				defaultValue={type === edit ? currentArticle.description : null}
 				type="text"
 				title="Description"
-				errors={errors}
+				errors={errors as IFieldErrors}
 			/>
 			<FieldArticleTextarea
 				{...register('articleTextarea', {
@@ -154,7 +155,7 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 				validArticleTextarea={validArticleTextarea}
 				defaultValue={type === edit ? currentArticle.body : null}
 				title="Text"
-				errors={errors}
+				errors={errors as IFieldErrors}
 			/>
 			<div className={clsx(styles['wrapper-tags'])}>
 				<p className={clsx(styles['title-tags'])}>Tags</p>
@@ -178,7 +179,7 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 								defaultValue={
 									type === edit ? currentArticle.tagList[0] : null
 								}
-								errors={errors}
+								errors={errors as IFieldErrors}
 							/>
 							<GeneralButtonByType
 								typeButton={'addTag'}
@@ -196,11 +197,10 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 									validate: value => validateArticleTag(value, 'second')
 								})}
 								validArticleTag={validArticleSecondTag}
-								// placeholder="Enter username:"
 								defaultValue={
 									type === edit ? currentArticle.tagList[1] : null
 								}
-								errors={errors}
+								errors={errors as IFieldErrors}
 							/>
 							<GeneralButtonByType
 								typeButton={'addTag'}
@@ -226,7 +226,7 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 								defaultValue={
 									type === edit ? currentArticle.tagList[2] : null
 								}
-								errors={errors}
+								errors={errors as IFieldErrors}
 							/>
 							<GeneralButtonByType
 								typeButton={'deleteTag'}
