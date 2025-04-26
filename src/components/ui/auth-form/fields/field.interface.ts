@@ -1,11 +1,13 @@
+interface IFieldErrors {
+	username?: { message: string };
+	repeatPassword?: { message: string };
+	password?: { message: string };
+	email?: { message: string };
+	avatarUrl?: { message: string };
+}
+
 export interface IField {
-	errors?: {
-		username: { message: string };
-		repeatPassword: { message: string };
-		password: { message: string };
-		email: { message: string };
-		avatarUrl: { message: string };
-	};
+	errors?: IFieldErrors;
 	required: boolean;
 	title: string;
 	validRepeatPassword?: boolean;
@@ -18,5 +20,5 @@ export interface IField {
 	defaultChecked?: boolean;
 	onChange?: () => void;
 	value?: string;
-	error?: string;
+	error?: boolean;
 }
