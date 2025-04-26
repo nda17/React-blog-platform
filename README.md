@@ -16,7 +16,7 @@
 - Antd
 - Date-fns
 - CLSX
-- Markdown-to-Jsx"
+- Markdown-to-Jsx
 - UUID
 
 ## Deployed:
