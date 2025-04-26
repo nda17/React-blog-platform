@@ -34,7 +34,7 @@ export const ArticleEdit: FC = () => {
 			await updateArticle({
 				token: token,
 				slug,
-				formattedArticle
+				article: formattedArticle
 			}).unwrap();
 			navigate(PUBLIC_PAGES.LIST_ARTICLES, { replace: true });
 			toast.success('Article successfully updated');

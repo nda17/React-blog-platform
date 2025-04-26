@@ -7,7 +7,6 @@ import { FieldArticleTextarea } from '@/components/ui/article-create-edit-form/f
 import { FieldArticleThirdTag } from '@/components/ui/article-create-edit-form/fields/field-article-third-tag/FieldArticleThirdTag';
 import { FieldArticleTitle } from '@/components/ui/article-create-edit-form/fields/field-article-title/FieldArticleTitle';
 import { IFieldErrors } from '@/components/ui/article-create-edit-form/fields/field-article.interface';
-import { IArticleItem } from '@/components/ui/article-item/article-item.interface';
 import { GeneralButtonByType } from '@/components/ui/buttons/general-button-by-type/GeneralButtonByType';
 import { SubmitFormButton } from '@/components/ui/buttons/submit-form-button/SubmitFormButton';
 import {
@@ -16,6 +15,7 @@ import {
 	validateArticleTextareaRegex,
 	validateArticleTitleRegex
 } from '@/shared/regex';
+import { IArticleData } from '@/types/article.interface';
 import clsx from 'clsx';
 import { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -49,7 +49,7 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 		handleSubmit
 	} = useForm({ mode: 'onChange' });
 
-	const onSubmit = (data: IArticleItem) => {
+	const onSubmit = (data: IArticleData) => {
 		handleRequest(data);
 	};
 
