@@ -11,13 +11,12 @@ export const FieldUsername = forwardRef<HTMLInputElement, IField>(
 			title,
 			validUsername,
 			type = 'text',
-			style,
 			...rest
 		},
 		ref
 	) => {
 		return (
-			<div className={clsx(styles['wrapper-input'])} style={style}>
+			<div className={clsx(styles['wrapper-input'])}>
 				<label className={clsx(styles['label-input'])}>
 					<p className={clsx(styles['label-input-title'])}>{title}</p>
 					<input

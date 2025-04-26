@@ -11,13 +11,12 @@ export const FieldRepeatPassword = forwardRef<HTMLInputElement, IField>(
 			title,
 			validRepeatPassword,
 			type = 'password',
-			style,
 			...rest
 		},
 		ref
 	) => {
 		return (
-			<div className={clsx(styles['wrapper-input'])} style={style}>
+			<div className={clsx(styles['wrapper-input'])}>
 				<label className={clsx(styles['label-input'])}>
 					<p className={clsx(styles['label-input-title'])}>{title}</p>
 					<input

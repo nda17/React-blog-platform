@@ -5,11 +5,11 @@ import { forwardRef } from 'react';
 
 export const FieldEmail = forwardRef<HTMLInputElement, IField>(
 	(
-		{ errors, required, title, validEmail, type = 'text', style, ...rest },
+		{ errors, required, title, validEmail, type = 'text', ...rest },
 		ref
 	) => {
 		return (
-			<div className={clsx(styles['wrapper-input'])} style={style}>
+			<div className={clsx(styles['wrapper-input'])}>
 				<label className={clsx(styles['label-input'])}>
 					<p className={clsx(styles['label-input-title'])}>{title}</p>
 					<input

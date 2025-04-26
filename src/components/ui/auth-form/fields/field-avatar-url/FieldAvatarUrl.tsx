@@ -5,19 +5,11 @@ import { forwardRef } from 'react';
 
 export const FieldAvatarUrl = forwardRef<HTMLInputElement, IField>(
 	(
-		{
-			errors,
-			required,
-			title,
-			validAvatarUrl,
-			type = 'text',
-			style,
-			...rest
-		},
+		{ errors, required, title, validAvatarUrl, type = 'text', ...rest },
 		ref
 	) => {
 		return (
-			<div className={clsx(styles['wrapper-input'])} style={style}>
+			<div className={clsx(styles['wrapper-input'])}>
 				<label className={clsx(styles['label-input'])}>
 					<p className={clsx(styles['label-input-title'])}>{title}</p>
 					<input
