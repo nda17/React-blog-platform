@@ -33,7 +33,16 @@
 
 .error {
 	position: absolute;
-	bottom: -18px;
+	bottom: -23px;
 	font-size: 10px;
 	color: rgb(237, 0, 0);
+
+
+	@media (min-width: 528px) {
+		bottom: -12px;
+	}
+
+	@media (min-width: 768px) {
+		bottom: -15px;
+	}
 }

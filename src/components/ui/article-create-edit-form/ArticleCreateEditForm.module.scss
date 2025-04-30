@@ -29,10 +29,14 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	gap: 18px;
+	gap: 26px;
 
 	@media (min-width: 300px) {
 		justify-content: left;
+	}
+
+	@media (min-width: 768px) {
+		gap: 18px;
 	}
 }
 
