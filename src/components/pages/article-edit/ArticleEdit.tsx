@@ -1,5 +1,6 @@
 import { ArticleCreateEditForm } from '@/components/ui/article-create-edit-form/ArticleCreateEditForm';
 import { IArticleItem } from '@/components/ui/article-item/article-item.interface';
+import { Preloader } from '@/components/ui/preloader/Preloader';
 import { PUBLIC_PAGES } from '@/config/pages/public.config';
 import { useUpdateArticleMutation } from '@/store/api';
 import { IArticle, IArticleData } from '@/types/article.interface';
@@ -61,12 +62,14 @@ const ArticleEdit: FC = () => {
 		handleUpdateArticle(token, slugCurrent, article);
 	};
 
-	return (
+	return currentArticle ? (
 		<ArticleCreateEditForm
 			type={type}
 			currentArticle={currentArticle}
 			handleRequest={handleRequest}
 		/>
+	) : (
+		<Preloader />
 	);
 };
 
