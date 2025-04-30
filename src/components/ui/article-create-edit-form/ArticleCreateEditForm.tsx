@@ -46,7 +46,9 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 	const {
 		register,
 		formState: { errors },
-		handleSubmit
+		handleSubmit,
+		setValue, //setValue для управления значениями формы
+		unregister //unregister для удаления формы
 	} = useForm({ mode: 'onChange' });
 
 	const onSubmit = (data: IArticleData) => {
@@ -114,10 +116,38 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 			for (let i = 0; i < 3; i++) {
 				if (currentArticle.tagList[i] !== undefined) {
 					setTagStates[i](true);
+					setValue(
+						`article${i === 0 ? 'First' : i === 1 ? 'Second' : 'Third'}Tag`,
+						currentArticle.tagList[i]
+					);
 				}
 			}
 		}
 	}, []);
+
+	// Функции для удаления тегов с очисткой значений формы
+	const handleDeleteFirstTag = () => {
+		setArticleFirstTag(false);
+		// setValue('articleFirstTag', ''); //Сбрас значения поля формы
+		unregister('articleFirstTag'); //Удаление поля из формы
+		setValidArticleFirstTag(false); //Сброс валидации
+	};
+
+	// Функции для удаления тегов с очисткой значений формы
+	const handleDeleteSecondTag = () => {
+		setArticleSecondTag(false);
+		// setValue('articleSecondTag', ''); //Сбрас значения поля формы
+		unregister('articleSecondTag'); //Удаление поля из формы
+		setValidArticleSecondTag(false); //Сброс валидации
+	};
+
+	// Функции для удаления тегов с очисткой значений формы
+	const handleDeleteThirdTag = () => {
+		setArticleThirdTag(false);
+		// setValue('articleThirdTag', ''); //Сбрас значения поля формы
+		unregister('articleThirdTag'); //Удаление поля из формы
+		setValidArticleThirdTag(false); //Сброс валидации
+	};
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className={styles.wrapper}>
@@ -160,14 +190,6 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 			<div className={clsx(styles['wrapper-tags'])}>
 				<p className={clsx(styles['title-tags'])}>Tags</p>
 				<div className={clsx(styles['wrapper-tags-group'])}>
-					{!articleFirstTag && !articleSecondTag && !articleThirdTag && (
-						<GeneralButtonByType
-							typeButton={'addTag'}
-							text={'Add tag'}
-							disabled={articleSecondTag}
-							callback={() => setArticleFirstTag(prev => !prev)}
-						/>
-					)}
 					{articleFirstTag && (
 						<div className={clsx(styles['wrapper-tag-input'])}>
 							<FieldArticleFirstTag
@@ -182,10 +204,10 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 								errors={errors as IFieldErrors}
 							/>
 							<GeneralButtonByType
-								typeButton={'addTag'}
-								text={'Add tag'}
+								typeButton={'deleteTag'}
+								text={'Delete'}
 								disabled={articleSecondTag}
-								callback={() => setArticleSecondTag(prev => !prev)}
+								callback={handleDeleteFirstTag} // Используем функцию с очисткой
 							/>
 						</div>
 					)}
@@ -203,15 +225,10 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 								errors={errors as IFieldErrors}
 							/>
 							<GeneralButtonByType
-								typeButton={'addTag'}
-								text={'Add tag'}
-								disabled={articleThirdTag}
-								callback={() => setArticleThirdTag(true)}
-							/>
-							<GeneralButtonByType
 								typeButton={'deleteTag'}
 								text={'Delete'}
-								callback={() => setArticleSecondTag(false)}
+								disabled={articleThirdTag}
+								callback={handleDeleteSecondTag}
 							/>
 						</div>
 					)}
@@ -231,9 +248,33 @@ export const ArticleCreateEditForm: FC<IArticleCreateEditForm> = ({
 							<GeneralButtonByType
 								typeButton={'deleteTag'}
 								text={'Delete'}
-								callback={() => setArticleThirdTag(false)}
+								callback={handleDeleteThirdTag}
 							/>
 						</div>
+					)}
+					{!articleFirstTag && (
+						<GeneralButtonByType
+							typeButton={'addTag'}
+							text={'Add tag'}
+							disabled={articleSecondTag}
+							callback={() => setArticleFirstTag(prev => !prev)}
+						/>
+					)}
+					{articleFirstTag && !articleSecondTag && (
+						<GeneralButtonByType
+							typeButton={'addTag'}
+							text={'Add tag'}
+							disabled={articleSecondTag}
+							callback={() => setArticleSecondTag(prev => !prev)}
+						/>
+					)}
+					{articleFirstTag && articleSecondTag && !articleThirdTag && (
+						<GeneralButtonByType
+							typeButton={'addTag'}
+							text={'Add tag'}
+							disabled={articleThirdTag}
+							callback={() => setArticleThirdTag(prev => !prev)}
+						/>
 					)}
 					<SubmitFormButton text={'Send'} />
 				</div>
