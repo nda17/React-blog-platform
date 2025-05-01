@@ -18,7 +18,7 @@ export interface IField {
 	validAvatarUrl?: boolean;
 	type?: string;
 	defaultChecked?: boolean;
-	defaultValue?: string ;
+	defaultValue?: string;
 	onChange?: (event: unknown) => void;
 	value?: string;
 	error?: boolean;

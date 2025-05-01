@@ -5,14 +5,7 @@ import { forwardRef } from 'react';
 
 export const FieldUsername = forwardRef<HTMLInputElement, IField>(
 	(
-		{
-			errors,
-			required,
-			title,
-			validUsername,
-			type = 'text',
-			...rest
-		},
+		{ errors, required, title, validUsername, type = 'text', ...rest },
 		ref
 	) => {
 		return (
